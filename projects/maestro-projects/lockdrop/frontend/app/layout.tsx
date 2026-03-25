@@ -13,6 +13,12 @@ export const metadata: Metadata = {
     description: 'Upload your work. Set your price. Client pays to unlock. No more chasing invoices.',
     url: 'https://lockdrop.co',
     siteName: 'LockDrop',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'LockDrop — Get paid before they download',
+    description: 'Upload your work. Set your price. Client pays to unlock. No more chasing invoices.',
   },
 }
 
