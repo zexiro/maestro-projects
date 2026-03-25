@@ -1,10 +1,16 @@
 const { Pool } = require('pg');
 
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: process.env.DATABASE_URL && process.env.DATABASE_URL.includes('localhost')
+const dbUrl = process.env.DATABASE_URL || '';
+// Disable SSL for local connections and Railway internal networking
+const useSsl = dbUrl.includes('localhost') || dbUrl.includes('.railway.internal')
+  ? false
+  : process.env.DATABASE_SSL === 'false'
     ? false
-    : { rejectUnauthorized: false }
+    : { rejectUnauthorized: false };
+
+const pool = new Pool({
+  connectionString: dbUrl,
+  ssl: useSsl
 });
 
 async function initDb() {
