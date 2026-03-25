@@ -12,9 +12,14 @@ export default function Home() {
         <span style={{ fontWeight: 700, fontSize: '1.25rem', color: 'var(--green)' }}>
           LockDrop
         </span>
-        <Link href="/create" className="btn-primary" style={{ fontSize: '0.9rem', padding: '10px 20px' }}>
-          Create a Drop
-        </Link>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+          <Link href="/blog" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.95rem', fontWeight: 500 }}>
+            Blog
+          </Link>
+          <Link href="/create" className="btn-primary" style={{ fontSize: '0.9rem', padding: '10px 20px' }}>
+            Create a Drop
+          </Link>
+        </div>
       </nav>
 
       {/* Hero */}
